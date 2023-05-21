@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Micro Blog</title>
+        <style>
+            html {
+                font-family: Lato, sans-serif;
+            }
+
+            *, *::after, *::before {
+                box-sizing: border-box;
+
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 80%;
+                border: 3px solid black;
+                margin: auto;
+            }
+
+            .navbar__brand {
+                display: flex;
+                margin-left: 2rem;
+            }
+
+            .navbar__brand img {
+                margin-right: 1rem;
+            }
+
+            .navbar__navigation {
+                margin-right: 5rem;
+            }
+
+            .navbar__links {
+                display: flex;
+                justify-content: space-evenly;
+                
+            }
+
+            .navbar__link {
+                list-style: none;
+                padding: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .navbar__link a{
+                text-decoration: none;
+                color: grey;
+                
+            }
+
+            .main {
+                max-width: 450px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+            }
+
+            .form__input {
+                width: 100%;
+            }
+
+            .form__label {
+                display: block;
+                margin-bottom: 0.3rem;
+
+            }
+
+            .form__textarea {
+                width: inherit;
+                font-size: 1rem;
+                padding: 12px 20px;
+                background-color: #f3f6f6;
+
+            }
+
+            .form__submit {
+                display: block;
+
+                width: 6rem;
+                height: 2rem;
+
+                font-weight: bold;
+
+                color: white;
+                background-color: #3cd0ff;
+                border-radius: 1rem;
+                border: 1px solid cyan;
+                margin-left: 5rem;
+                cursor: pointer;
+            }
+
+            .form__submit:hover {
+                background-color: #18c1e1;
+            }
+
+            .entry {
+                margin-top: 50px;
+            }
+
+            .entry__title {
+                display: inline;
+                font-size: 18px;
+            }
+
+            .entry__date {
+                color: #5c6b70;
+            }
+
+            .entry__content {
+                font-size: 16px;
+                line-height: 150%;
+             
+             
+            }
+            
+            .footer {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 34vh;
+
+                padding: 40px 0;
+                border-top: 4px solid black;
+                margin-top: 50px;
+        
+
+                color: white;
+                background-color: #323f43;
+
+                font-size: 12px;
+            }
+
+            .footer .left {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                margin-left: 20rem;
+                
+                flex-direction: column;
+                flex-grow: 2;
+                ;
+                
+            }
+
+            .right {
+                display: grid;
+                margin-right: 3rem;
+                grid-template-columns: 6rem 7rem;
+                grid-template-rows: 1.3rem 1.6rem;
+                margin-right: 18rem;
+               
+            }
+
+            .footer__item {
+                color: white;
+                text-decoration: none;
+            }
+        </style>
+    </header>
+    <body>
+        <header class="navbar">
+            <div class="navbar__brand">
+                <img src="/static/logo.svg" alt="logo of bloack square outline with super imposed comment bubble">
+                <h1 style="display: inline-block;">Micro Blog</h1>
+            </div>
+            <nav class="navbar__navigation">
+                <ul class="navbar__links">
+                    <li class="navbar__link"><a href="#">Recent</a></li>
+                    <li class="navbar__link"><a href="#">Calendar</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <section>
+                <h2>Add new entry</h1>
+                    <form class="form" action="/entry" method="POST">
+                        <p class="form__input">
+                            <label class="form__label" for="entry">Entry conetents:</label>
+                            <textarea class="form__textarea" name="content" id="entry"></textarea>
+                        </p>
+                        <button class="form__submit" type="submit">Add entry</button>
+                    </form>
+            </section>
+            <section>
+                <h1>Recent posts</h1>
+                <article class="entry">
+                    <h3 class="entry__title">Chill day today -</h3>
+                    <time class="entry__date" datetime="19-5-2023">May 19</time>
+                    <p class="entry__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, veniam quasi, nobis</p>
+                </article>
+                <article>
+                    <h3></h3>
+                    <p></p>
+                </article>
+                <article>
+                    <h3></h3>
+                    <p></p>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <section style="margin-bottom: 0.8rem;" class="left">
+                <a  href="" class="footer__item">Made by Bruce Jacobo</a>
+                <a style="padding-top: 0.5rem;" href="" class="footer__item">Other projects</a>
+            </section>
+            <section class="right">
+                <a href="" class="footer__item">Recent</a>
+                <a href="" class="footer__item">Calendar</a>
+                <a href="" class="footer__item">About</a>
+                <a href="" class="footer__item">How this was made</a>
+            </section>
+
+        </footer>
+    </body>
+</html>
