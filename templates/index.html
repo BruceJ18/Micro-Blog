@@ -199,11 +199,17 @@
             </section>
             <section>
                 <h1>Recent posts</h1>
+                {% for entry in entries %}
                 <article class="entry">
-                    <h3 class="entry__title">Chill day today -</h3>
-                    <time class="entry__date" datetime="19-5-2023">May 19</time>
-                    <p class="entry__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, veniam quasi, nobis</p>
+                    <h3 class="entry__title">{{ entry[0] | truncate(20, true)}} -</h3>
+                    <time class="entry__date" datetime="{{ entry[1]}}">{{ entry[2] }}</time>
+                    
+                    <p class="entry__content">
+                    {{ entry[0] }}
+                    </p>
+                    
                 </article>
+                {% endfor %}
                 <article>
                     <h3></h3>
                     <p></p>
