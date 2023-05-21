@@ -1,11 +1,14 @@
-from flask import Flask, render_template, request
 import datetime
+import os
+from flask import Flask, render_template, request
 from pymongo import MongoClient
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def create_app():
     app = Flask(__name__)
-    db_client = MongoClient('mongodb+srv://brucej18:illescio369@cluster0.5bjmfpv.mongodb.net/')
+    db_client = MongoClient(os.getenv("MONGODB_URI"))
     app.db = db_client.MicroBlog
 
     @app.route("/", methods=["GET", "POST"])
@@ -15,7 +18,7 @@ def create_app():
             formatted_date = datetime.datetime.today().strftime("%Y-%m-%d")
             app.db.entries.insert_one({"content": entry_content, "date": formatted_date})
 
-            
+
         entries_with_date = [(
             entry["content"], 
             entry["date"], 

@@ -24,12 +24,21 @@
                 align-items: center;
                 width: 80%;
                 border: 3px solid black;
+                transform: scaleZ(-1) scale(1);
+                transition: transform 1s;
                 margin: auto;
+                margin-top: 1rem;
             }
 
             .navbar__brand {
                 display: flex;
                 margin-left: 2rem;
+            }
+
+            .navbar__brand img:hover {
+                margin-right: 1rem;
+                transform: scale(1.1);
+                cursor: pointer;
             }
 
             .navbar__brand img {
@@ -146,11 +155,11 @@
                 font-size: 12px;
             }
 
-            .footer .left {
+            .left {
                 display: flex;
                 justify-content: center;
-                align-items: flex-start;
-                margin-left: 20rem;
+                align-items: center;
+                
                 
                 flex-direction: column;
                 flex-grow: 2;
@@ -210,19 +219,11 @@
                     
                 </article>
                 {% endfor %}
-                <article>
-                    <h3></h3>
-                    <p></p>
-                </article>
-                <article>
-                    <h3></h3>
-                    <p></p>
-                </article>
             </section>
         </main>
         <footer class="footer">
             <section style="margin-bottom: 0.8rem;" class="left">
-                <a  href="" class="footer__item">Made by Bruce Jacobo</a>
+                <a href="" class="footer__item">Made by Bruce Jacobo</a>
                 <a style="padding-top: 0.5rem;" href="" class="footer__item">Other projects</a>
             </section>
             <section class="right">
